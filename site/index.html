@@ -1,0 +1,178 @@
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>RFD 導覽頁</title>
+	<link rel="icon" type="image/png" href="../images/rfd-icon.svg">
+	
+	<link href="../indexStyle.css" type="text/css" rel="stylesheet">
+	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+	
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="../jquery-waves/css/jquery-waves.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+	<script src="../jquery-waves/js/jquery-waves.min.js"></script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" integrity="sha512-siarrzI1u3pCqFG2LEzi87McrBmq6Tp7juVsdmGY1Dr8Saw+ZBAzDzrGwX3vgxX1NkioYNCFOVC0GpDPss10zQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" integrity="sha512-W/zrbCncQnky/EzL+/AYwTtosvrM+YG/V6piQLSe2HuKS6cmbw89kjYkp3tWFn1dkWV7L1ruvJyKbLz73Vlgfg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css" integrity="sha512-P9pgMgcSNlLb4Z2WAB2sH5KBKGnBfyJnq+bhcfLCFusrRc4XdXrhfDluBl/usq75NF5gTDIMcwI1GaG5gju+Mw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	
+	<!-- Three.js import -->
+	<script async src="https://unpkg.com/es-module-shims@1.8.0/dist/es-module-shims.js"></script>
+	<script type="importmap">
+		{
+			"imports": {
+				"three": "./three/three.module.js",
+				"three/addons/": "./three/jsm/"
+			}
+		}
+	</script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+</head>
+
+<body class="bg-transparent">
+	<div class="container-lg bg-transparent">
+	
+		<div class="row justify-content-lg-center text-light">
+			<div class="col">
+				<h1 class="text-center my-3">初待時夜</h1>
+			</div>
+		</div>
+		
+		<div class="row justify-content-lg-evenly PlantsWatcher text-light">
+			<div id="IntroDiv" data-waves-background-color="rgba(204, 102, 0, 0.1)"
+				class="col-lg-5 border border-3 border-secondary bg-dark bg-opacity-50 d-flex flex-column">
+			
+				<h2 class="text-center border-bottom border-2 border-dark">介紹</h2>
+				<div class="d-flex align-items-start">
+					<div class="nav flex-column nav-pills me-3 bg-light bg-opacity-25" id="IntroVPill" role="tablist" aria-orientation="vertical">
+						<button class="nav-link active" id="NameTab" data-bs-toggle="pill" data-bs-target="#NameTabData"
+							type="button" role="tab" aria-controls="NameTabData" aria-selected="true">名稱意涵</button>
+						<button class="nav-link" id="IntroTab" data-bs-toggle="pill" data-bs-target="#IntroTabData"
+							type="button" role="tab" aria-controls="IntroTabData" aria-selected="false">自我介紹</button>
+						<button class="nav-link" id="ActivityTab" data-bs-toggle="pill" data-bs-target="#ActivityTabData"
+							type="button" role="tab" aria-controls="ActivityTabData" aria-selected="false">活動內容</button>
+						<button class="nav-link" id="AdditionalTab" data-bs-toggle="pill" data-bs-target="#AdditionalTabData"
+							type="button" role="tab" aria-controls="AdditionalTabData" aria-selected="false"><i class="fa-solid fa-mug-saucer"></i></button>
+						<button class="nav-link" id="CamSwitchTab" data-bs-toggle="pill" data-bs-target="#CamSwitchData"
+							type="button" role="tab" aria-controls="CamSwitchData" aria-selected="false"><i class="fa-brands fa-pagelines"></i></button>
+					</div>
+					<div class="tab-content" id="v-pills-tabContent">
+						<div class="tab-pane fade show active" id="NameTabData" role="tabpanel" aria-labelledby="NameTab">
+							<h4 class="text-left mx-3 custom-lcyan-text">名稱意涵</h4>
+							<p class="text-left mx-3">
+								總之我知道一般人不感興趣，所以長話短說。<br>
+							</p>
+							<dl class="text-left mx-3">
+								<dt>初待</dt>
+								<dd>對「成功做到自己想做的事」的祈願和決心</dd>
+								<dt>時夜</dt>
+								<dd>希望可以在匿名的前提下，自由做事的期望</dd>
+							</dl>
+						</div>
+						<div class="tab-pane fade" id="IntroTabData" role="tabpanel" aria-labelledby="IntroTab">
+							<h4 class="text-left mx-3 custom-lcyan-text">自我介紹</h4>
+							<p class="text-left mx-3">
+								某個需要休閒的存在，因為壓力太大創造的身分。<br>
+								會玩 Minecraft 紅石，會打 Apex，也會寫筆記。<br>
+								有時可能會亂玩些什麼別的。<br>
+								另外，也許之後會開始做恐怖遊戲，<br>
+								也會學習繪圖並畫出自己的形象－－以及其他東西。<br>
+							</p>
+						</div>
+						<div class="tab-pane fade" id="ActivityTabData" role="tabpanel" aria-labelledby="ActivityTab">
+							<h4 class="text-left mx-3 custom-lcyan-text">活動內容</h4>
+							<ul class="list-group list-group-horizontal">
+								<li class="list-group-item list-group-item-secondary">X (Twitter)</li>
+								<li class="list-group-item list-group-item-dark">現況報告</li>
+							</ul>
+							<ul class="list-group list-group-horizontal">
+								<li class="list-group-item list-group-item-secondary">YouTube</li>
+								<li class="list-group-item list-group-item-dark">Minecraft 紅石、低機率亂玩</li>
+							</ul>
+							<ul class="list-group list-group-horizontal">
+								<li class="list-group-item list-group-item-secondary">Twitch</li>
+								<li class="list-group-item list-group-item-dark">FPS</li>
+							</ul>
+							<ul class="list-group list-group-horizontal">
+								<li class="list-group-item list-group-item-secondary">HackMD</li>
+								<li class="list-group-item list-group-item-dark">雜記、文章</li>
+							</ul>
+							<ul class="list-group list-group-horizontal">
+								<li class="list-group-item list-group-item-secondary">Steam</li>
+								<li class="list-group-item list-group-item-dark">恐怖遊戲製作（未建立）</li>
+							</ul>
+						</div>
+						<div class="tab-pane fade" id="AdditionalTabData" role="tabpanel" aria-labelledby="AdditionalTab">
+							<h4 class="text-left mx-3 custom-lcyan-text"><i class="fa-solid fa-mug-saucer"></i></h4>
+							<div class="d-flex d-inline-flex">
+								<img id="MacchiatoImage" class="flex-shrink-0" data-bs-toggle="tooltip" title="焦糖瑪奇朵"></img>
+								<div class="align-middle">
+									<p id="TotalTime" class="text-left mx-3"></p>
+									<p id="MacchiatoTime" class="text-left mx-3"></p>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="CamSwitchData" role="tabpanel" aria-labelledby="CamSwitchTab">
+							<h4 class="text-left mx-3 custom-lcyan-text"><i class="fa-brands fa-pagelines"></i></h4>
+							<div class="d-flex d-inline-flex">
+								<div>
+									<img id="PottedPlantImage" class="flex-shrink-0" data-bs-toggle="tooltip" title="背景植物"></img>
+									<br>
+									<p id="SwitchSpan" class="flex-shrink-0 text-center SwitchSpanIdle">切換畫面</p>
+								</div>
+								<img id="PlantsMonitor" data-state="1st" class="mx-3"></img>
+							</div>
+						</div>
+					</div>
+				</div>
+				<br>
+				<h2 class="text-center border-bottom border-2 border-dark">傳送門</h2>
+				<div class="row flex-grow-1 d-flex justify-content-evenly align-items-center my-3 text-center bg-dark">
+					<div class="col">
+						<a href="https://twitter.com/rebfdl" target="_blank">
+							<i class="fa-brands fa-x-twitter ShownIcon fs-1"></i>
+						</a>
+					</div>
+					<div class="col">
+						<a href="https://hackmd.io/@rebfdl" target="_blank">
+							<i id="HackMDLink" class="fa-solid ShownIcon fs-4">Hack<br>MD</i>
+						</a>
+					</div>
+					<div class="col">
+						<a href="https://youtube.com/@rebfdl" target="_blank">
+							<i class="fa-brands fa-youtube ShownIcon fs-1"></i>
+						</a>
+					</div>
+					<div class="col">
+						<a href="https://www.twitch.tv/3rdg11000" target="_blank">
+							<i class="fa-brands fa-twitch ShownIcon fs-1"></i>
+						</a>
+					</div>
+					<div class="col">
+						<a href="" id="SteamIcon" target="_blank" disabled>
+							<i class="fa-brands fa-steam ShownIcon fs-1"></i>
+						</a>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div id="ArticleDiv" class="col-lg-5 border border-3 custom-gray-border">
+				<h2 class="text-center border-bottom border-2 border-light">任務</h2>
+				<div class="ratio ratio-1x1">
+					<iframe class="embed-responsive-item" src="https://hackmd.io/@rebfdl/S1fzg3cin"></iframe>
+				</div>
+			</div>
+			
+		</div>
+		
+	</div>
+	<script src="../indexScript.js" type="text/javascript"></script>
+	<script id="BGScript" src="../starryScript.js" type="module"></script>
+</body>

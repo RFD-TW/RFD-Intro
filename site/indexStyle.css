@@ -1,0 +1,179 @@
+/* 配色 class */
+.custom-lcyan-text
+{ color: #ccffff; }
+.custom-gray-border
+{ border: #333 solid; }
+
+/* Three.js Canvas --> BG */
+canvas
+{
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index:-1;
+}
+
+/* Navs 外觀 */
+.nav-link
+{
+	color: Aquamarine !important;
+	text-shadow: Aquamarine 0 0 0.3em;
+	&.active
+	{
+		color: white !important;
+		text-shadow: none;
+	}
+}
+
+/* 傳送門 ICON */
+.ShownIcon:hover
+{ text-shadow: #66ccff 0 0 0.2em; }
+a[disabled]
+{
+	color: gray;
+	pointer-events: none;
+}
+
+/* 焦糖瑪奇朵 - 元素染色 */
+.MacchiatoOn
+{
+	animation: OrangeGlow 3s ease-in-out 1;
+	animation-fill-mode: forwards;
+}
+@keyframes OrangeGlow {
+	to {
+		color: orange;
+		text-shadow: orange 0 0 0.2em;
+	}
+}
+
+/* 圖片按鈕 - 經過 / 不經過 */
+#MacchiatoImage
+{
+	width: 100;
+	height: 100;
+	
+	cursor: pointer;
+	content: url('../images/MacchiatoLineart.svg');
+	&:hover { content: url('../images/MacchiatoHolloween.svg'); }
+}
+#PottedPlantImage
+{
+	width: 100;
+	height: 100;
+	
+	cursor: pointer;
+	content: url('../images/PottedPlant.svg');
+	border-radius: 50%;
+	
+	&:hover
+	{
+		content: url('../images/PottedPlantSpace.svg');
+		border-radius: 0%;
+	}
+}
+.SwitchSpanIdle
+{
+	opacity: 0.4;
+}
+.SwitchSpanGlow
+{
+	opacity: 1;
+	color: #ccccff;
+	text-shadow: #ccccff 0 0 0.2em;
+}
+
+/* 區塊 - 滑鼠經過 */
+.DivHover
+{
+	border: #66ccff solid;
+	box-shadow: #66ccff 0 0 1.2em;
+}
+
+/* 區塊 - 掃描線動畫 */
+#IntroDiv, #ArticleDiv
+{
+	background-image: linear-gradient(
+		90deg,
+		transparent 12%,
+		rgba(127, 255, 212, 0.4) 14%,
+		transparent 16%, transparent 60%,
+		rgba(127, 255, 212, 0.4) 62%,
+		transparent 64%
+	);
+	background-size: 200% auto;
+	animation: ScanClip 16s linear infinite;
+}
+@keyframes ScanClip
+{
+	to { background-position: 200% center; }
+}
+
+/* 科幻植物 - 背景播放 */
+.PlantsWatcher
+{
+	background-color: transparent;
+	background-size: cover;
+	background-position: center bottom;
+	
+	animation: CamSwitch 12s ease infinite;
+}
+@keyframes CamSwitch
+{
+	0%, 30%, 70%, 100%
+	{ background-image: url('../images/SwitchGrid.svg'); }
+	5%, 25%
+	{ background-image: url('../images/SciFiHerbsSaplingsT-1.png'); }
+	35%, 65%
+	{ background-image: url('../images/SciFiHerbsSaplingsT-2.png'); }
+	75%, 95%
+	{ background-image: url('../images/SciFiHerbsSaplingsT-3.png'); }
+}
+
+
+/* 科幻植物 - 按鈕切換 */
+#PlantsMonitor
+{
+	width: 150px;
+	height: 150px;
+	
+	background-size: contain;
+	background-position: center center;
+	
+	&[data-state='1st']
+	{
+		animation: FirstSwitch 4s ease 1;
+		animation-fill-mode: forwards;
+	}
+	&[data-state='2nd']
+	{
+		animation: SecondSwitch 4s ease 1;
+		animation-fill-mode: forwards;
+	}
+	&[data-state='3rd']
+	{
+		animation: ThirdSwitch 4s ease 1;
+		animation-fill-mode: forwards;
+	}
+}
+@keyframes FirstSwitch
+{
+	0%, 15%
+	{ background-image: url('../images/RandomNoise.svg'); }
+	30%, 100%
+	{ background-image: url('../images/SciFiHerbsSaplings-1.png'); }
+}
+@keyframes SecondSwitch
+{
+	0%, 15%
+	{ background-image: url('../images/RandomNoise.svg'); }
+	30%, 100%
+	{ background-image: url('../images/SciFiHerbsSaplings-2.png'); }
+}
+@keyframes ThirdSwitch
+{
+	0%, 15%
+	{ background-image: url('../images/RandomNoise.svg'); }
+	30%, 100%
+	{ background-image: url('../images/SciFiHerbsSaplings-3.png'); }
+}
