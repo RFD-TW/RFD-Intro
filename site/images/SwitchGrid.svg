@@ -1,18 +1,1 @@
-<svg 
-  viewBox="0 0 40 40"
-  width="40px" height="40px"
-  xmlns='http://www.w3.org/2000/svg'>
-	
-	<defs>
-		<pattern id="smallGrid" width="1" height="1" patternUnits="userSpaceOnUse">
-			<path d="M 1 0 L 0 0 0 1" fill="none" stroke="rgba(127, 255, 212, 0.4)" stroke-width="0.1"/>
-		</pattern>
-		<pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-			<rect width="10" height="10" fill="url(#smallGrid)"/>
-			<path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(102, 204, 255, 0.4)" stroke-width="0.1"/>
-		</pattern>
-	</defs>
-
-	<rect width="100%" height="100%" fill="url(#grid)" />
-	
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"><defs><pattern id="a" width="1" height="1" patternUnits="userSpaceOnUse"><path fill="none" stroke="rgba(127, 255, 212, 0.4)" stroke-width=".1" d="M1 0H0v1"/></pattern><pattern id="b" width="10" height="10" patternUnits="userSpaceOnUse"><path fill="url(#a)" d="M0 0h10v10H0z"/><path fill="none" stroke="rgba(102, 204, 255, 0.4)" stroke-width=".1" d="M10 0H0v10"/></pattern></defs><rect width="100%" height="100%" fill="url(#b)"/></svg>

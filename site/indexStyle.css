@@ -161,19 +161,19 @@ a[disabled]
 	0%, 15%
 	{ background-image: url('../images/RandomNoise.svg'); }
 	30%, 100%
-	{ background-image: url('../images/SciFiHerbsSaplings-1.png'); }
+	{ background-image: url('../images/SciFiHerbsSaplings-1.webp'); }
 }
 @keyframes SecondSwitch
 {
 	0%, 15%
 	{ background-image: url('../images/RandomNoise.svg'); }
 	30%, 100%
-	{ background-image: url('../images/SciFiHerbsSaplings-2.png'); }
+	{ background-image: url('../images/SciFiHerbsSaplings-2.webp'); }
 }
 @keyframes ThirdSwitch
 {
 	0%, 15%
 	{ background-image: url('../images/RandomNoise.svg'); }
 	30%, 100%
-	{ background-image: url('../images/SciFiHerbsSaplings-3.png'); }
+	{ background-image: url('../images/SciFiHerbsSaplings-3.webp'); }
 }
