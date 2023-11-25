@@ -26,6 +26,7 @@
 ### 測試
 
 * https://github.com/halt9k/python-https-server
+
 用 Anaconda 或隨便什麼鬼給他執行環境，然後執行 run_server.bat 就好了。<br>
 之後開 https://localhost:8000 就能看到這東西所在的上一層資料夾的網頁。<br>
 <br>
@@ -48,20 +49,20 @@ httpd.serve_forever()
 * 紅，橙紅，橙，橙黃，黃，藍，深藍
 * 紅+白，橙紅+白，橙+白，橙黃+白，黃+白，藍+白，深藍+白
 * 白
-<br>
+
 H = 色相（顏色），S = 飽和（鮮豔），L = 亮度。
 * H 根據基底顏色設定，分為7種，加白色8種
 * S 固定為1（最大），否則顏色不夠鮮明
 * 純色 L = 0.7，+白 L = 0.8
-<br>
+
 用以上配色做出15種材質，各套用到50個粒子上；白色套用到300個粒子上。<br>
-<br>
+
 隨距離增加的雲霧顏色、深度改成
 > starryScript - function init()
 ```javascript
 scene.fog = new THREE.FogExp2( 0x000000, 0.00075 );
 ```
-<br>
+
 雖然看不太出差異，渲染打開抗鋸齒、高效能，把色調映射改成順眼的
 > starryScript - function init()
 ```javascript
@@ -69,24 +70,24 @@ renderer = new THREE.WebGLRenderer( { antialias: true, powerPreference: 'high-pe
 // ...
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
 ```
-<br>
+
 滑鼠移動幅度調成2倍
 > starryScript - function render()
 ```javascript
 camera.position.x += ( mouseX - camera.position.x ) * 0.1;
 camera.position.y += ( - mouseY - camera.position.y ) * 0.1;
 ```
-<br>
+
 然後...除此之外，用 jQuery 的
 * $(document).height()
 * $(document).width()
-<br>
+
 取代範例的
 * window.innerWidth
 * window.innerHeight
-<br>
+
 以避免視窗縮放時，無法即時正確的變換 canvas 大小，導致滾動條出現。<br>
-<br>
+
 做好後把 JS 程式引入 HTML，利用 CSS 固定在背景
 > index.html
 ```html
@@ -102,7 +103,7 @@ canvas
     z-index:-1;
 }
 ```
-<br>
+
 固定後刪掉這行，讓手機版的觸控也可以轉動星空視角。
 > starryScript - init()
 ```javascript
