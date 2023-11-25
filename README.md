@@ -30,7 +30,7 @@
 之後開 https://localhost:8000 就能看到這東西所在的上一層資料夾的網頁。<br>
 <br>
 至於為什麼不簡單的用 http server...我爽。咬我啊。ㄌㄩㄝˋ。<br>
-也是可以寫<br>
+也是可以寫
 ```python
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 httpd = HTTPServer(('localhost', 8000), SimpleHTTPRequestHandler)
