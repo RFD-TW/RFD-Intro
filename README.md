@@ -30,8 +30,7 @@
 用 Anaconda 或隨便什麼鬼給他執行環境，然後執行 run_server.bat 就好了。<br>
 之後開 https://localhost:8000 就能看到這東西所在的上一層資料夾的網頁。<br>
 <br>
-至於為什麼不簡單的用 http server...我爽。咬我啊。ㄌㄩㄝˋ。<br>
-也是可以寫
+想用 HTTP 的話，也是可以寫
 ```python
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 httpd = HTTPServer(('localhost', 8000), SimpleHTTPRequestHandler)
