@@ -23,14 +23,26 @@
 
 ## 技術
 
+### 測試
+
+* https://github.com/halt9k/python-https-server
+用 Anaconda 或隨便什麼鬼給他執行環境，然後執行 run_server.bat 就好了。
+之後開 https://localhost:8000 就能看到這東西所在的上一層資料夾的網頁。
+
+至於為什麼不簡單的用 http server...我爽。咬我啊。ㄌㄩㄝˋ。
+也是可以寫
+```python
+from http.server import HTTPServer, SimpleHTTPRequestHandler
+httpd = HTTPServer(('localhost', 8000), SimpleHTTPRequestHandler)
+httpd.serve_forever()
+```
+然後用 PyInstaller 包成執行檔，想要時再執行。
+
 ### 背景星空
 
 改編自[上面提過的範例](https://threejs.org/examples/#webgl_points_billboards)。
 
 把原始程式黏進來，執行後根據報的錯誤，把所有引用到的程式複製到網站目錄。
-測試使用
-* https://github.com/halt9k/python-https-server
-用 Anaconda 或隨便什麼鬼
 
 參考恆星光譜，並以 HSL 設定顏色，設定以下15種：
 * 紅，橙紅，橙，橙黃，黃，藍，深藍
@@ -84,10 +96,10 @@ camera.position.y += ( - mouseY - camera.position.y ) * 0.1;
 ```css
 canvas
 {
-	position: fixed;
-	left: 0;
-	top: 0;
-	z-index:-1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index:-1;
 }
 ```
 
@@ -98,7 +110,44 @@ document.body.style.touchAction = 'none';
 ```
 
 ### 焦糖瑪奇朵 - 時間
+
+上面的點擊函式用來記錄點進標籤的時間
+```javascript
+$('#AdditionalTab').click(
+    function()
+    {
+        enterMacchiatoTime = moment();
+    }
+);
+```
+然後和 window.setInterval(function(){...}, 200) 中，每0.2秒執行一次的程式配合，
+moment.diff 計算當前時間 moment() 和兩種時間的差，送進 moment.duration 後轉換成秒數。
+```javascript
+totalSec = moment
+    .duration(
+        moment().diff(moment(enterTime))
+    ).asSeconds();
+macchiatoSec = moment
+    .duration(
+        moment().diff(moment(enterMacchiatoTime))
+    ).asSeconds();
+```
+
 ### 焦糖瑪奇朵 - 水波
+
+使用 jquery-waves 這個別人做的小工具，第一次點擊擴散橘色，第二次退掉。
+改寫[作者給的範例](https://isaeken.github.io/jquery-waves/)，
+擴散時在周圍元素加入 indexStyle 中定義的 MacchiatoOn class 以觸發其中的染橘動畫，
+退掉後 pop 多餘水波物件、移除 MacchiatoOn class，以免物件堆積、為下次染橘準備。
+
+最後，計算相對於點擊目標父物件的 left, top 位置，把擴散起點挪到那裡。
+```javascript
+ripple = $('#IntroDiv').ripple(
+    $(this).offset().left - $('#IntroDiv').offset().left + $(this).width()/2,
+    $(this).offset().top - $('#IntroDiv').offset().top + $(this).height()/2
+);
+```
+
 ### 科幻植物 - 背景
 ### 科幻植物 - 切換
 ### 科幻植物 - 轉場畫面
