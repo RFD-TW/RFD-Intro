@@ -57,13 +57,13 @@ H = 色相（顏色），S = 飽和（鮮豔），L = 亮度。
 用以上配色做出15種材質，各套用到50個粒子上；白色套用到300個粒子上。<br>
 
 隨距離增加的雲霧顏色、深度改成
-> starryScript - function init()
+> starryScript.js - function init()
 ```javascript
 scene.fog = new THREE.FogExp2( 0x000000, 0.00075 );
 ```
 
 雖然看不太出差異，渲染打開抗鋸齒、高效能，把色調映射改成順眼的
-> starryScript - function init()
+> starryScript.js - function init()
 ```javascript
 renderer = new THREE.WebGLRenderer( { antialias: true, powerPreference: 'high-performance' } );
 // ...
@@ -71,7 +71,7 @@ renderer.toneMapping = THREE.ACESFilmicToneMapping;
 ```
 
 滑鼠移動幅度調成2倍
-> starryScript - function render()
+> starryScript.js - function render()
 ```javascript
 camera.position.x += ( mouseX - camera.position.x ) * 0.1;
 camera.position.y += ( - mouseY - camera.position.y ) * 0.1;
@@ -104,7 +104,7 @@ canvas
 ```
 
 固定後刪掉這行，讓手機版的觸控也可以轉動星空視角。
-> starryScript - init()
+> starryScript.js - init()
 ```javascript
 document.body.style.touchAction = 'none';
 ```
@@ -112,6 +112,7 @@ document.body.style.touchAction = 'none';
 ### 焦糖瑪奇朵 - 時間
 
 上面的點擊函式用來記錄點進標籤的時間
+> indexScript.js
 ```javascript
 $('#AdditionalTab').click(
     function()
@@ -122,6 +123,7 @@ $('#AdditionalTab').click(
 ```
 然後和 window.setInterval(function(){...}, 200) 中，每0.2秒執行一次的程式配合，<br>
 moment.diff 計算當前時間 moment() 和兩種時間的差，送進 moment.duration 後轉換成秒數。
+> indexScript.js
 ```javascript
 totalSec = moment
     .duration(
@@ -141,6 +143,7 @@ macchiatoSec = moment
 退掉後 pop 多餘水波物件、移除 MacchiatoOn class，以免物件堆積、為下次染橘準備。<br>
 <br>
 最後，計算相對於點擊目標父物件的 left, top 位置，把擴散起點挪到那裡。<br>
+> indexScript.js
 ```javascript
 ripple = $('#IntroDiv').ripple(
     $(this).offset().left - $('#IntroDiv').offset().left + $(this).width()/2,
