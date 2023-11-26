@@ -45,7 +45,7 @@ httpd.serve_forever()
 
 改編自[上面提過的範例](https://threejs.org/examples/#webgl_points_billboards)。<br>
 <br>
-在 HTML 中加入 importmap 並引用 JS 程式，利用 importmap 讓 JS 程式可以用 import 語法調用。<br>
+在 HTML 中加入 importmap 並引用 JS 程式，利用 importmap 讓 JS 程式可以用 import 語法調用 Three。<br>
 執行後根據報的錯誤，把所有引用到的 Three 程式複製到網站目錄。<br>
 importmap 放在 head，JS 程式放在 body，不然執行會因為順序不對有錯誤。<br>
 <br>
