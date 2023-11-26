@@ -37,7 +37,7 @@ a[disabled]
 /* 焦糖瑪奇朵 - 元素染色 */
 .MacchiatoOn
 {
-	animation: OrangeGlow 3s ease-in-out 1;
+	animation: OrangeGlow 3s ease 1;
 	animation-fill-mode: forwards;
 }
 @keyframes OrangeGlow {
