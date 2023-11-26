@@ -88,7 +88,8 @@ camera.position.y += ( - mouseY - camera.position.y ) * 0.1;
 以避免視窗縮放時，無法即時正確的變換 canvas 大小，導致滾動條出現。<br>
 
 做好後把 JS 程式引入 HTML，利用 CSS 固定在背景。<br>
-[固定畫布又不會妨礙滑鼠事件的方法](https://www.educative.io/answers/how-to-add-threejs-as-background-in-html)參考國外的文。<br>
+（[固定畫布又不會妨礙滑鼠事件的方法](https://www.educative.io/answers/how-to-add-threejs-as-background-in-html)參考國外的文）
+
 > index.html
 ```html
 <script id="BGScript" src="../starryScript.js" type="module"></script>
