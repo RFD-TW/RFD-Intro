@@ -74,7 +74,7 @@ renderer = new THREE.WebGLRenderer( { antialias: true, powerPreference: 'high-pe
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
 ```
 
-滑鼠移動幅度調成2倍
+滑鼠移動幅度調成原來的2倍
 > starryScript.js - function render()
 ```javascript
 camera.position.x += ( mouseX - camera.position.x ) * 0.1;
