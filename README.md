@@ -87,7 +87,8 @@ camera.position.y += ( - mouseY - camera.position.y ) * 0.1;
 
 以避免視窗縮放時，無法即時正確的變換 canvas 大小，導致滾動條出現。<br>
 
-做好後把 JS 程式引入 HTML，利用 CSS 固定在背景
+做好後把 JS 程式引入 HTML，利用 CSS 固定在背景。<br>
+[固定畫布又不會妨礙滑鼠事件的方法](https://www.educative.io/answers/how-to-add-threejs-as-background-in-html)參考國外的文。<br>
 > index.html
 ```html
 <script id="BGScript" src="../starryScript.js" type="module"></script>
@@ -107,6 +108,29 @@ canvas
 > starryScript.js - init()
 ```javascript
 document.body.style.touchAction = 'none';
+```
+
+### 掃描線動畫
+
+參考[國外網站的第二篇](https://alvarotrigo.com/blog/css-text-animations/)，讓圖片可以循環式的從左移到右，<br>
+並利用 linear-gradient 繪製掃描線圖片。<br>
+畫的時候可以參考 [W3School 的教學](https://www.w3schools.com/cssref/func_linear-gradient.php)，順便拿 Try it Yourself 的編輯器實驗。<br>
+> indexStyle.css
+```css
+#IntroDiv, #ArticleDiv
+{
+	background-image: linear-gradient(
+		90deg,
+		transparent 12%, 16%, 60%, 64%
+		rgba(127, 255, 212, 0.4) 14%, 62%
+	);
+	background-size: 200% auto;
+	animation: ScanClip 16s linear infinite;
+}
+@keyframes ScanClip
+{
+	to { background-position: 200% center; }
+}
 ```
 
 ### 焦糖瑪奇朵 - 時間
@@ -142,7 +166,11 @@ macchiatoSec = moment
 擴散時在周圍元素加入 indexStyle 中定義的 MacchiatoOn class 以觸發其中的染橘動畫，<br>
 退掉後 pop 多餘水波物件、移除 MacchiatoOn class，以免物件堆積、為下次染橘準備。<br>
 <br>
-最後，計算相對於點擊目標父物件的 left, top 位置，把擴散起點挪到那裡。<br>
+最後，計算相對於點擊目標祖先物件的 left, top 位置，把擴散起點挪到那裡。<br>
+<br>
+[方法有參考 stackoverflow 的討論](https://stackoverflow.com/questions/10964992/determine-the-position-of-an-element-relative-to-a-positioned-ancestor-of-its-of)，雖然沒有被標為正確答案。<br>
+至於為什麼要手算，因為我是在好幾層前的祖先物件裡，觸發「以按鈕為起點的水波動畫」的，不是直接點擊祖先物件。<br>
+提醒一下，這個函式裡的 "this" 是那個瑪奇朵圖片物件。<br>
 > indexScript.js
 ```javascript
 ripple = $('#IntroDiv').ripple(
@@ -152,6 +180,64 @@ ripple = $('#IntroDiv').ripple(
 ```
 
 ### 科幻植物 - 背景
+
+用 CSS 寫循環動畫，賦予背景區塊作為背景。<br>
+animation 中，12s 是執行區間，ease 是開始、完成時緩速，infinite 是循環播放。<br>
+利用 background-size 跟 background-position 讓圖片等比縮放到蓋住整體，並把顯示位置固定在正中間底部。<br>
+> indexStyle.css
+```css
+.PlantsWatcher
+{
+	background-color: transparent;
+	background-size: cover;
+	background-position: center bottom;
+	
+	animation: CamSwitch 12s ease infinite;
+}
+@keyframes CamSwitch
+{
+	0%, 30%, 70%, 100%
+	{ background-image: url('../images/SwitchGrid.svg'); }
+	5%, 25%
+	{ background-image: url('../images/SciFiHerbsSaplingsT-1.png'); }
+	35%, 65%
+	{ background-image: url('../images/SciFiHerbsSaplingsT-2.png'); }
+	75%, 95%
+	{ background-image: url('../images/SciFiHerbsSaplingsT-3.png'); }
+}
+```
+
+圖片使用以下工具生成
+* https://www.recraft.ai/
+
+轉場網格利用 SVG 繪製，利用 pattern 跟 rect 結合，<br>
+pattern 在 rect 中套用後，會作為紋理重複並延伸到整體大小。<br>
+<br>
+參考 [stackoverflow 的討論](https://stackoverflow.com/questions/14208673/how-to-draw-grid-using-html5-and-canvas-or-svg)<br>
+<br>
+為了嘗試提高效能，我把 svg 圖做得很小，只有 40x40，似乎有點效果<br>
+> smallGrid.svg
+```svg
+<svg 
+  viewBox="0 0 40 40"
+  width="40px" height="40px"
+  xmlns='http://www.w3.org/2000/svg'>
+	
+	<defs>
+		<pattern id="smallGrid" width="1" height="1" patternUnits="userSpaceOnUse">
+			<path d="M 1 0 L 0 0 0 1" fill="none" stroke="rgba(127, 255, 212, 0.4)" stroke-width="0.1"/>
+		</pattern>
+		<pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+			<rect width="10" height="10" fill="url(#smallGrid)"/>
+			<path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(102, 204, 255, 0.4)" stroke-width="0.1"/>
+		</pattern>
+	</defs>
+
+	<rect width="100%" height="100%" fill="url(#grid)" />
+	
+</svg>
+```
+
 ### 科幻植物 - 切換
 ### 科幻植物 - 轉場畫面
 
