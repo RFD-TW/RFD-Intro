@@ -45,6 +45,7 @@ httpd.serve_forever()
 
 改編自[上面提過的範例](https://threejs.org/examples/#webgl_points_billboards)。<br>
 <br>
+在 HTML 中加入 importmap 並引用 JS 程式，利用 importmap 讓 JS 程式可以用 import 語法調用。<br>
 把原始程式黏進來，執行後根據報的錯誤，把所有引用到的程式複製到網站目錄。<br>
 <br>
 參考恆星光譜，並以 HSL 設定顏色，設定以下15種：
