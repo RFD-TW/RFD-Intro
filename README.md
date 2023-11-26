@@ -58,6 +58,7 @@ H = 色相（顏色），S = 飽和（鮮豔），L = 亮度。
 * 純色 L = 0.7，+白 L = 0.8
 
 用以上配色做出15種材質，各套用到50個粒子上；白色套用到300個粒子上。<br>
+> 程式在 starryScript.js
 
 隨距離增加的雲霧顏色、深度改成
 > starryScript.js - function init()
@@ -171,8 +172,8 @@ macchiatoSec = moment
 退掉後 pop 多餘水波物件、移除 MacchiatoOn class，以免物件堆積、為下次染橘準備。<br>
 <br>
 最後，計算相對於點擊目標祖先物件的 left, top 位置，把擴散起點挪到那裡。<br>
-<br>
 [方法有參考 stackoverflow 的討論](https://stackoverflow.com/questions/10964992/determine-the-position-of-an-element-relative-to-a-positioned-ancestor-of-its-of)，雖然沒有被標為正確答案。<br>
+<br>
 至於為什麼要手算，因為我是在好幾層前的祖先物件裡，觸發「以按鈕為起點的水波動畫」的，不是直接點擊祖先物件。<br>
 提醒一下，這個函式裡的 "this" 是那個瑪奇朵圖片物件。<br>
 > indexScript.js
@@ -188,8 +189,7 @@ ripple = $('#IntroDiv').ripple(
 用 CSS 寫循環動畫，賦予背景區塊作為背景。<br>
 ease（開始、完成時緩速）在這裡比較好看，所以就改成這個。<br>
 （瑪奇朵的染橘也是 ease）<br>
-利用 background-size 跟 background-position<br>
-讓圖片等比縮放到蓋住整體，並把顯示位置固定在正中間底部。<br>
+利用 background-size 跟 background-position 讓圖片等比縮放到蓋住整體，並把顯示位置固定在正中間底部。<br>
 > 程式在 indexStyle.css
 
 圖片使用以下工具生成
@@ -241,10 +241,46 @@ pattern 在 rect 中套用後，會作為紋理重複並延伸到整體大小。
 
 ## 壓縮
 
-* 圖片
-* 程式
+使用以下工具：
+* [TinyPNG](https://tinypng.com/)
+* [SVGOMG](https://jakearchibald.github.io/svgomg/)
+* [Pixelied](https://pixelied.com/convert/png-converter/png-to-webp)
+
+### 透明圖片
+
+> [!NOTE]
+> .png<br>
+> &emsp;-- TinyPng--> .png, min size<br>
+> &emsp;-- Pixelied--> .webp, 100% quality<br>
+> &emsp;-- TingPng--> .webp, min size
+
+### 不透明圖片
+> [!NOTE]
+> .png -- TinyPng--> .png, min size
+
+### SVG
+> [!NOTE]
+> .svg -- SVGOMG--> .svg, min size
+
+### 程式
+
+參考[外國的文章](https://nitropack.io/blog/post/minify-resources/)，使用以下工具
+* https://www.toptal.com/developers/javascript-minifier
+
+> [!CAUTION]
+> CSS 壓縮工具基本上壓縮完程式就壞掉了，所以不要用。<br>
+> 然後，HTML 壓縮沒什麼意義，只會降低可讀性。<br>
+> 文章推薦的其他 JS 壓縮工具，無法處理利用 importmap 引用 Three.js 函式庫的 starryScript.js。
 
 ## 發佈
 
-* 存放程式
-* 自動部署
+### 存放程式
+
+嗯...我相信你都在看 Github 了，應該知道我的程式在 Github 上吧。
+
+### 自動部署
+
+用 [Netlify](https://www.netlify.com/) 串 Github 可以在鎖著專案的狀態下部署，還能在更新程式時自動更新網站。<br>
+缺點是放上去後，沒有主動處理可能要很久或永遠不會搜尋得到網站，裡面的子網頁還可能會出 bug 收錄不到搜尋引擎裡。<br>
+> [!NOTE]
+> 不要問我怎麼知道的，問就是前世。
