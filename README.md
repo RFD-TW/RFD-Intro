@@ -12,7 +12,7 @@
     * Bootstrap 5.3.1
         > https://getbootstrap.com/docs/5.3/getting-started/introduction/
 * 背景星空
-    * Three.js
+    * Three.js r157
         > https://threejs.org/examples/#webgl_points_billboards
 * 焦糖瑪奇朵 - 時間
     * Moment.js 2.29.4
