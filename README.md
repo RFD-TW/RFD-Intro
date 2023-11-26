@@ -120,6 +120,11 @@ document.body.style.touchAction = 'none';
 參考[國外網站的第二篇](https://alvarotrigo.com/blog/css-text-animations/)，讓圖片可以循環式的從右移到左，<br>
 並利用 linear-gradient 繪製掃描線圖片。<br>
 畫的時候可以參考 [W3School 的教學](https://www.w3schools.com/cssref/func_linear-gradient.php)，順便拿 Try it Yourself 的編輯器實驗。<br>
+> [!WARNING]
+> 如果這麼做會很謎的良心不安，就自己在本地架 server 試，只要摸過 Python 就能用上面的方法了。<br>
+> W3School 的 Spaces 不是這個用途，先提醒一聲。<br>
+> 不然就從[W3School線上編輯器介紹](https://www.w3schools.com/tryit/default.asp)點進[這裡](https://www.w3schools.com/tryit/tryit.asp?filename=tryhtml_hello)；順帶一提裡面還有[後端編輯器](https://www.w3schools.com/tryit/trycompiler.asp?filename=demo_python)。實驗完記得複製下來。<br>
+
 > indexStyle.css
 ```css
 #IntroDiv, #ArticleDiv
