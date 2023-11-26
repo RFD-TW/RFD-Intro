@@ -117,7 +117,7 @@ document.body.style.touchAction = 'none';
 
 ### 掃描線動畫
 
-參考[國外網站的第二篇](https://alvarotrigo.com/blog/css-text-animations/)，讓圖片可以循環式的從左移到右，<br>
+參考[國外網站的第二篇](https://alvarotrigo.com/blog/css-text-animations/)，讓圖片可以循環式的從右移到左，<br>
 並利用 linear-gradient 繪製掃描線圖片。<br>
 畫的時候可以參考 [W3School 的教學](https://www.w3schools.com/cssref/func_linear-gradient.php)，順便拿 Try it Yourself 的編輯器實驗。<br>
 > indexStyle.css
