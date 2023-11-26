@@ -286,6 +286,11 @@ pattern 在 rect 中套用後，會作為紋理重複並延伸到整體大小。
 ### 自動部署
 
 用 [Netlify](https://www.netlify.com/) 串 Github 可以在鎖著專案的狀態下部署，還能在更新程式時自動更新網站。<br>
-缺點是放上去後，沒有主動處理可能要很久或永遠不會搜尋得到網站，裡面的子網頁還可能會出 bug 收錄不到搜尋引擎裡。<br>
+缺點是放上去後，沒有主動處理可能要很久或永遠不會搜尋得到網站，子網頁還可能會出 bug 收錄不到搜尋引擎裡。<br>
 > [!NOTE]
 > 不要問我怎麼知道的，問就是前世。
+
+## 版權
+> 不放感覺怪怪的。
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="創用 CC 授權條款" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />本著作係採用<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">創用 CC 姓名標示 4.0 國際 授權條款</a>授權.
