@@ -183,8 +183,9 @@ ripple = $('#IntroDiv').ripple(
 ### 科幻植物 - 背景
 
 用 CSS 寫循環動畫，賦予背景區塊作為背景。<br>
-animation 中，12s 是執行區間，ease 是開始、完成時緩速，infinite 是循環播放。<br>
-利用 background-size 跟 background-position 讓圖片等比縮放到蓋住整體，並把顯示位置固定在正中間底部。<br>
+ease（開始、完成時緩速）在這裡比較好看，所以就改成這個。<br>
+利用 background-size 跟 background-position<br>
+讓圖片等比縮放到蓋住整體，並把顯示位置固定在正中間底部。<br>
 > indexStyle.css
 ```css
 .PlantsWatcher
@@ -240,6 +241,9 @@ pattern 在 rect 中套用後，會作為紋理重複並延伸到整體大小。
 ```
 
 ### 科幻植物 - 切換
+
+在按鈕上加入自訂的 data-state 屬性，通過 jQuery 在每次點擊時切換，讓數值在3種字串間輪替。<br>
+
 ### 科幻植物 - 轉場畫面
 
 ## 壓縮
