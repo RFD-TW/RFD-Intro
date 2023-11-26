@@ -60,7 +60,7 @@ H = 色相（顏色），S = 飽和（鮮豔），L = 亮度。
 用以上配色做出15種材質，各套用到50個粒子上；白色套用到300個粒子上。<br>
 > 程式在 starryScript.js
 
-隨距離增加的雲霧顏色、深度改成
+隨距離增加的雲霧，顏色、深度改成
 > starryScript.js - function init()
 ```javascript
 scene.fog = new THREE.FogExp2( 0x000000, 0.00075 );
