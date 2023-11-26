@@ -3,6 +3,9 @@
 基於保存原始碼供參考的考量，分成 site, source 目錄。<br>
 公開到網路的網站在 site，保留的原始碼在 source。<br>
 
+> [!NOTE]
+> 如果要看程式的寫法，記得要去 source 目錄看。
+
 ## 函式庫
 
 * HTML 排版
@@ -184,30 +187,10 @@ ripple = $('#IntroDiv').ripple(
 
 用 CSS 寫循環動畫，賦予背景區塊作為背景。<br>
 ease（開始、完成時緩速）在這裡比較好看，所以就改成這個。<br>
+（瑪奇朵的染橘也是 ease）<br>
 利用 background-size 跟 background-position<br>
 讓圖片等比縮放到蓋住整體，並把顯示位置固定在正中間底部。<br>
-> indexStyle.css
-```css
-.PlantsWatcher
-{
-	background-color: transparent;
-	background-size: cover;
-	background-position: center bottom;
-	
-	animation: CamSwitch 12s ease infinite;
-}
-@keyframes CamSwitch
-{
-	0%, 30%, 70%, 100%
-	{ background-image: url('../images/SwitchGrid.svg'); }
-	5%, 25%
-	{ background-image: url('../images/SciFiHerbsSaplingsT-1.png'); }
-	35%, 65%
-	{ background-image: url('../images/SciFiHerbsSaplingsT-2.png'); }
-	75%, 95%
-	{ background-image: url('../images/SciFiHerbsSaplingsT-3.png'); }
-}
-```
+> 程式在 indexStyle.css
 
 圖片使用以下工具生成
 * https://www.recraft.ai/
@@ -218,33 +201,43 @@ pattern 在 rect 中套用後，會作為紋理重複並延伸到整體大小。
 參考 [stackoverflow 的討論](https://stackoverflow.com/questions/14208673/how-to-draw-grid-using-html5-and-canvas-or-svg)<br>
 <br>
 為了嘗試提高效能，我把 svg 圖做得很小，只有 40x40，似乎有點效果<br>
-> smallGrid.svg
-```svg
-<svg 
-  viewBox="0 0 40 40"
-  width="40px" height="40px"
-  xmlns='http://www.w3.org/2000/svg'>
-	
-	<defs>
-		<pattern id="smallGrid" width="1" height="1" patternUnits="userSpaceOnUse">
-			<path d="M 1 0 L 0 0 0 1" fill="none" stroke="rgba(127, 255, 212, 0.4)" stroke-width="0.1"/>
-		</pattern>
-		<pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-			<rect width="10" height="10" fill="url(#smallGrid)"/>
-			<path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(102, 204, 255, 0.4)" stroke-width="0.1"/>
-		</pattern>
-	</defs>
-
-	<rect width="100%" height="100%" fill="url(#grid)" />
-	
-</svg>
-```
+> 程式在 smallGrid.svg
 
 ### 科幻植物 - 切換
 
 在按鈕上加入自訂的 data-state 屬性，通過 jQuery 在每次點擊時切換，讓數值在3種字串間輪替。<br>
+畢竟在 JS 中直接定義狀態變數，要單獨定義 class 來加減，還是在目標新增 data-［自己想的名稱］屬性比較直觀。<br>
+> 程式在 indexStyle.css 跟 indexScript.js
 
-### 科幻植物 - 轉場畫面
+轉場畫面也是用 SVG，用 fractal noise 的隨機變化模擬電視雜訊。<br>
+電視上的雜訊主要是白雜訊 (white / static noise)，網路上也說大多是黑白的，但我記得小時候看到的是彩色的。<br>
+所以我就做成彩色的了。<br>
+
+黑白的可以參考這個
+* https://css-tricks.com/making-static-noise-from-a-weird-css-gradient-bug/
+
+彩色的可以參考這個
+* https://css-tricks.com/grainy-gradients/
+
+參考中國的某篇網站說明，還有 stackoverflow 的討論後，直接利用 animate 把圖片做成持續調整 seed 的動畫。
+* https://stackoverflow.com/questions/44242344/generating-images-with-non-repeating-random-patterns
+* https://www.zhangxinxu.com/wordpress/2020/10/svg-feturbulence/
+> RandomNoise.svg
+```svg
+<filter id='noiseFilter'>
+    <feTurbulence 
+        type='fractalNoise' 
+        baseFrequency='0.45' 
+        numOctaves='3' 
+        stitchTiles='stitch'>
+        <animate
+            attributeName="seed"
+            values="0;100;0"
+            dur="5s"
+            repeatCount="indefinite" />
+    </feTurbulence>
+</filter>
+```
 
 ## 壓縮
 
