@@ -253,7 +253,7 @@ pattern 在 rect 中套用後，會作為紋理重複並延伸到整體大小。
 * [SVGOMG](https://jakearchibald.github.io/svgomg/)
 * [Pixelied](https://pixelied.com/convert/png-converter/png-to-webp)
 
-### 透明圖片
+### 不透明圖片
 
 > [!NOTE]
 > .png<br>
@@ -261,7 +261,7 @@ pattern 在 rect 中套用後，會作為紋理重複並延伸到整體大小。
 > &emsp;-- Pixelied--> .webp, 100% quality<br>
 > &emsp;-- TingPng--> .webp, min size
 
-### 不透明圖片
+### 透明圖片
 > [!NOTE]
 > .png -- TinyPng--> .png, min size
 
