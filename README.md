@@ -133,10 +133,13 @@ document.body.style.touchAction = 'none';
 #IntroDiv, #ArticleDiv
 {
     background-image: linear-gradient(
-        90deg,
-        transparent 12%, 16%, 60%, 64%
-        rgba(127, 255, 212, 0.4) 14%, 62%
-    );
+		90deg,
+		transparent 12%,
+		rgba(127, 255, 212, 0.4) 14%,
+		transparent 16% 60%,
+		rgba(127, 255, 212, 0.4) 62%,
+		transparent 64%
+	);
     background-size: 200% auto;
     animation: ScanClip 16s linear infinite;
 }
@@ -203,20 +206,6 @@ ease（開始、完成時緩速）在這裡比較好看，所以就改成這個�
 圖片使用以下工具生成
 * https://www.recraft.ai/
 
-轉場網格利用 SVG 繪製，利用 pattern 跟 rect 結合，<br>
-pattern 在 rect 中套用後，會作為紋理重複並延伸到整體大小。<br>
-<br>
-參考 [stackoverflow 的討論](https://stackoverflow.com/questions/14208673/how-to-draw-grid-using-html5-and-canvas-or-svg)<br>
-<br>
-為了嘗試提高效能，我把 svg 圖做得很小，只有 40x40，似乎有點效果<br>
-> 程式在 smallGrid.svg
-
-### 科幻植物 - 切換
-
-在按鈕上加入自訂的 data-state 屬性，通過 jQuery 在每次點擊時切換，讓數值在3種字串間輪替。<br>
-畢竟在 JS 中直接定義狀態變數，要單獨定義 class 來加減，還是在目標新增 data-［自己想的名稱］屬性比較直觀。<br>
-> 程式在 indexStyle.css 跟 indexScript.js
-
 轉場畫面也是用 SVG，用 fractal noise 的隨機變化模擬電視雜訊。<br>
 電視上的雜訊主要是白雜訊 (white / static noise)，網路上也說大多是黑白的，但我記得小時候看到的是彩色的。<br>
 所以我就做成彩色的了。<br>
@@ -246,6 +235,20 @@ pattern 在 rect 中套用後，會作為紋理重複並延伸到整體大小。
     </feTurbulence>
 </filter>
 ```
+
+### 科幻植物 - 切換
+
+在按鈕上加入自訂的 data-state 屬性，通過 jQuery 在每次點擊時切換，讓數值在3種字串間輪替。<br>
+畢竟在 JS 中直接定義狀態變數，要單獨定義 class 來加減，還是在目標新增 data-［自己想的名稱］屬性比較直觀。<br>
+> 程式在 indexStyle.css 跟 indexScript.js
+
+轉場網格利用 SVG 繪製，利用 pattern 跟 rect 結合，<br>
+pattern 在 rect 中套用後，會作為紋理重複並延伸到整體大小。<br>
+<br>
+參考 [stackoverflow 的討論](https://stackoverflow.com/questions/14208673/how-to-draw-grid-using-html5-and-canvas-or-svg)<br>
+<br>
+為了嘗試提高效能，我把 svg 圖做得很小，只有 40x40，似乎有點效果<br>
+> 程式在 smallGrid.svg
 
 ## 壓縮
 
