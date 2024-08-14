@@ -250,6 +250,10 @@ pattern 在 rect 中套用後，會作為紋理重複並延伸到整體大小。
 為了嘗試提高效能，我把 svg 圖做得很小，只有 40x40，似乎有點效果<br>
 > 程式在 smallGrid.svg
 
+## 圖片預載
+
+動態載入圖片會在首次載入時造成延遲，追加預載圖片機制。參考 [stackoverflow 討論中的正解](https://stackoverflow.com/questions/476679/preloading-images-with-jquery)。
+
 ## 壓縮
 
 使用以下工具：
