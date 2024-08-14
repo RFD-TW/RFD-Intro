@@ -95,8 +95,11 @@ a[disabled]
 {
 	background-image: linear-gradient(
 		90deg,
-		transparent 12%, 16%, 60%, 64%
-		rgba(127, 255, 212, 0.4) 14%, 62%
+		transparent 12%,
+		rgba(127, 255, 212, 0.4) 14%,
+		transparent 16% 60%,
+		rgba(127, 255, 212, 0.4) 62%,
+		transparent 64%
 	);
 	background-size: 200% auto;
 	animation: ScanClip 16s linear infinite;
@@ -118,7 +121,7 @@ a[disabled]
 @keyframes CamSwitch
 {
 	0%, 30%, 70%, 100%
-	{ background-image: url('../images/SwitchGrid.svg'); }
+	{ background-image: url('../images/RandomNoise.svg'); }
 	5%, 25%
 	{ background-image: url('../images/SciFiHerbsSaplingsT-1.png'); }
 	35%, 65%
@@ -156,21 +159,21 @@ a[disabled]
 @keyframes FirstSwitch
 {
 	0%, 15%
-	{ background-image: url('../images/RandomNoise.svg'); }
+	{ background-image: url('../images/SwitchGrid.svg'); }
 	30%, 100%
 	{ background-image: url('../images/SciFiHerbsSaplings-1.webp'); }
 }
 @keyframes SecondSwitch
 {
 	0%, 15%
-	{ background-image: url('../images/RandomNoise.svg'); }
+	{ background-image: url('../images/SwitchGrid.svg'); }
 	30%, 100%
 	{ background-image: url('../images/SciFiHerbsSaplings-2.webp'); }
 }
 @keyframes ThirdSwitch
 {
 	0%, 15%
-	{ background-image: url('../images/RandomNoise.svg'); }
+	{ background-image: url('../images/SwitchGrid.svg'); }
 	30%, 100%
 	{ background-image: url('../images/SciFiHerbsSaplings-3.webp'); }
 }

@@ -3,8 +3,29 @@ let totalSec, macchiatoSec;
 
 let ripples = [];
 
+function preload(imgArray) {
+    $(imgArray).each(function() {
+        $('<img/>')[0].src = this;
+    });
+}
+
 $(document).ready(()=>
 {
+	preload([
+		'../images/MacchiatoLineart.svg',
+		'../images/MacchiatoHolloween.svg',
+		'../images/PottedPlant.svg',
+		'../images/PottedPlantSpace.svg',
+		'../images/SwitchGrid.svg',
+		'../images/SciFiHerbsSaplingsT-1.png',
+		'../images/SciFiHerbsSaplingsT-2.png',
+		'../images/SciFiHerbsSaplingsT-3.png',
+		'../images/RandomNoise.svg',
+		'../images/SciFiHerbsSaplings-1.webp',
+		'../images/SciFiHerbsSaplings-2.webp',
+		'../images/SciFiHerbsSaplings-3.webp'
+	]);
+	
 	// 傳送門 icon
 	$(".ShownIcon").hover(
 		function() { $(this).addClass("fa-shake"); },

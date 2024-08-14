@@ -5,11 +5,11 @@
 	
 	<defs>
 		<pattern id="smallGrid" width="1" height="1" patternUnits="userSpaceOnUse">
-			<path d="M 1 0 L 0 0 0 1" fill="none" stroke="rgba(127, 255, 212, 0.4)" stroke-width="0.1"/>
+			<path d="M 1 0 L 0 0 0 1" fill="none" stroke="rgba(127, 255, 212, 0.4)" stroke-width="0.5"/>
 		</pattern>
 		<pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
 			<rect width="10" height="10" fill="url(#smallGrid)"/>
-			<path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(102, 204, 255, 0.4)" stroke-width="0.1"/>
+			<path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(102, 204, 255, 0.4)" stroke-width="0.5"/>
 		</pattern>
 	</defs>
 
