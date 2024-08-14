@@ -252,7 +252,8 @@ pattern 在 rect 中套用後，會作為紋理重複並延伸到整體大小。
 
 ## 圖片預載
 
-動態載入圖片會在首次載入時造成延遲，追加預載圖片機制。參考 [stackoverflow 討論中的正解](https://stackoverflow.com/questions/476679/preloading-images-with-jquery)。
+動態載入圖片會在首次載入時造成延遲，追加預載圖片機制。參考 [stackoverflow 討論中的正解](https://stackoverflow.com/questions/476679/preloading-images-with-jquery)。<br>
+由於已經不會有初次載入造成的外觀問題，有順便改回原計畫的外觀，雜訊動畫放背景轉場，網格圖片放按鈕轉場。
 
 ## 壓縮
 
