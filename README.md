@@ -30,8 +30,9 @@
 
 * https://github.com/halt9k/python-https-server
 
-用 Anaconda 或隨便什麼鬼給他執行環境，然後執行 run_server.bat 就好了。<br>
-之後開 `https://localhost:8000` 就能看到這東西所在的上一層資料夾的網頁。<br>
+照原始專案說明，先直接執行 generate_certificate.bat 一次，<br>
+以後想測試時用 Anaconda3 或任意 Python 環境執行 run_server.bat 就好了，<br>
+開啟 `https://localhost:8000` 後就能看到這東西所在的上一層資料夾的網頁。<br>
 <br>
 想用 HTTP 的話，也是可以寫
 ```python
