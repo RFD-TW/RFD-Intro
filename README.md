@@ -133,13 +133,13 @@ document.body.style.touchAction = 'none';
 #IntroDiv, #ArticleDiv
 {
     background-image: linear-gradient(
-		90deg,
-		transparent 12%,
-		rgba(127, 255, 212, 0.4) 14%,
-		transparent 16% 60%,
-		rgba(127, 255, 212, 0.4) 62%,
-		transparent 64%
-	);
+        90deg,
+        transparent 12%,
+        rgba(127, 255, 212, 0.4) 14%,
+        transparent 16% 60%,
+        rgba(127, 255, 212, 0.4) 62%,
+        transparent 64%
+    );
     background-size: 200% auto;
     animation: ScanClip 16s linear infinite;
 }
